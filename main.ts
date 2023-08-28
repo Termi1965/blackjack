@@ -438,16 +438,14 @@ function Init () {
     ]
     mySprite3.setPosition(43, 25)
     mySprite3.sayText("You  " + convertToText(Myscore))
-    mySprite4.sayText("Dealer")
     mySprite4.setPosition(126, 25)
+    mySprite4.sayText("Dealer")
     Count = 0
     Dealer = 0
     Card = 0
     Cards = 0
     Dcards = 0
-    Prize = 10
 }
-let Prize = 0
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
 let Kort12: Sprite = null
