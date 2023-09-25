@@ -96,16 +96,18 @@ function Dealer_Action () {
         if (Dealer > 21) {
             Mysprite6.sayText(convertToText(Dealer))
             Myscore += 10
+            Flag = 1
             sprites.destroyAllSpritesOfKind(SpriteKind.Enemy, effects.fire, 500)
             sprites.destroyAllSpritesOfKind(SpriteKind.Player, effects.confetti, 500)
         }
     }
-    if (Dealer <= 21) {
+    if (Dealer <= 21 && Flag != 1) {
         Mysprite6.sayText(convertToText(Dealer))
         Myscore += -10
         sprites.destroyAllSpritesOfKind(SpriteKind.Player, effects.fire, 500)
         sprites.destroyAllSpritesOfKind(SpriteKind.Enemy, effects.confetti, 500)
     }
+    Flag = 0
     Init()
 }
 function Draw (num: number) {
@@ -460,6 +462,7 @@ let Kort4: Sprite = null
 let Kort3: Sprite = null
 let Kort2: Sprite = null
 let Kort1: Sprite = null
+let Flag = 0
 let Mysprite6: Sprite = null
 let Mysprite5: Sprite = null
 let Myscore = 0
@@ -472,4 +475,5 @@ let list: Sprite[] = []
 let Card = 0
 let Count = 0
 let Cards = 0
+game.splash("Blackjack", "A = Hit   B = Stand")
 Init()
